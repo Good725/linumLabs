@@ -4,6 +4,7 @@
 require("@nomiclabs/hardhat-truffle5");
 require("@nomiclabs/hardhat-etherscan");
 require("@nomiclabs/hardhat-waffle");
+require("dotenv").config();
 
 module.exports = {
   defaultNetwork: "hardhat",
