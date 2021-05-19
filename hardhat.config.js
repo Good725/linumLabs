@@ -10,12 +10,14 @@ module.exports = {
   networks: {
     hardhat: {
       forking: {
-        url: "https://mainnet.infura.io/v3/9a755ff3354b427aaab1837447d93a46"
+        url: "https://mainnet.infura.io/v3/" + process.env.INFURA_KEY,
       }
     },
     rinkeby: {
-      url: "https://rinkeby.infura.io/v3/9a755ff3354b427aaab1837447d93a46",
-      accounts: ["9d085d5d64d3fec1f821ec13aff69995fdf8b8d29d70019d0bc7ca5b777b3dc9"]
+      url: "https://mainnet.infura.io/v3/" + process.env.INFURA_KEY,
+      accounts: {
+        mnemonic: process.env.MNEMONIC,
+      }
     }
   },
   solidity: {
@@ -31,6 +33,6 @@ module.exports = {
     timeout: 999999
   },
   etherscan: {
-    apiKey: "CDXGZVNEKNXYZMBBFE2RX5Z4S823ZCC7ZF"
+    apiKey: process.env.ETHERSCAN_KEY
   }
 };
